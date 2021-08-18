@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "@material-ui/core";
+import Menu from "./Components/Menu";
+import "@fontsource/roboto";
+import { makeStyles } from "@material-ui/core";
+import bg from './static/bg.jpg';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage: `url(${bg}),linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5))`,
+    backgroundBlendMode: 'overlay',
+    minHeight: "100vh",
+    backgroundRepeat: "no-repeat",
+    // backgroundColor: "rgba(2, 2, 50)",
+    flexGrow: "1",
+  },
+}));
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Menu />
     </div>
   );
 }
